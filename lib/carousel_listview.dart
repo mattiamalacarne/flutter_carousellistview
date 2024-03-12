@@ -13,10 +13,10 @@ class CarouselListView extends StatefulWidget {
   /// Lista di widget da mostrare nel carousel
   final List<Widget> children;
   /// Durata dell'animazione di scroll
-  Duration? scrollDuration;
+  final Duration? scrollDuration;
   /// Definisce il comportamento del gesture detector
-  HitTestBehavior? hitTestBehavior;
-  Axis scrollDirection;
+  final HitTestBehavior? hitTestBehavior;
+  final Axis scrollDirection;
 
   CarouselListView({
     super.key,

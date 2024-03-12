@@ -28,8 +28,12 @@ class CarouselListViewController {
   /// Se overflow controlla che sia disponibile lo scroll infinit
   void scrollToIndex(int i)
   {
-    if(_isScrollLocked) return;
-    if((i < 0 || i >= numOfChildren) && !infiniteScroll) return;
+    if(_isScrollLocked) {
+      return;
+    }
+    if((i < 0 || i >= numOfChildren) && !infiniteScroll) {
+      return;
+    }
 
     if(i < 0 && infiniteScroll) {
       i = numOfChildren - 1;
@@ -39,7 +43,7 @@ class CarouselListViewController {
     }
 
     _isScrollLocked = true;
-    final double sWidth = MediaQuery.of(_context!).size.width ?? 0;
+    final double sWidth = MediaQuery.of(_context!).size.width;
     final double offset = i * sWidth;
     currentIndex = i;
     scrollController.animateTo(offset, duration: scrollDuration ?? Duration(milliseconds: 400), curve: Curves.easeInOut);

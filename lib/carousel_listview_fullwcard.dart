@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class CarouselListViewFullWidthCard extends StatelessWidget {
-  Color? bg;
-  Widget child;
-  CarouselListViewFullWidthCard({Key? key, required this.child, this.bg}) : super(key: key);
+  final Color? bg;
+  final Widget child;
+  CarouselListViewFullWidthCard({super.key, required this.child, this.bg});
 
   @override
   Widget build(BuildContext context) {
