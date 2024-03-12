@@ -1,39 +1,71 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# flutter_carousellistview
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+This Flutter plugin a carousel listview widget with snap scrolling and onChange Callback
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Platform Support
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+| Android |  iOS  | MacOS |  Web  | Linux | Windows |
+| :-----: | :---: | :---: | :---: | :---: | :-----: |
+|✅|✅|✅|✅|✅|✅|
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+You can use the package by importing it and initialize with a list of widget
 
 ```dart
-const like = 'sample';
+import 'package:carousel_listview/carousel_listview.dart';
+
+class MainApp extends StatefulWidget {
+  const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  /// Track the current index in the carousel_listview 
+  int curr = 0;
+  /// Onscroll callback
+  void setCurr(int index) {
+    setState(() {
+      curr = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 50,
+                      child: CarouselListView(
+                        onElementChange: setCurr,
+                        infiniteScroll: true,
+                        children: [
+                          Text("Widget1"),
+                          Text("Widget2"),
+                          Text("Widget3"),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 50),
+              Text("Index: $curr")
+            ]
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.

@@ -13,7 +13,6 @@ class CarouselListViewFullWidthCard extends StatelessWidget {
           color: bg ?? Colors.transparent
       ),
       width: MediaQuery.of(context).size.width,
-      height: 120,
       child: child,
     );
   }
