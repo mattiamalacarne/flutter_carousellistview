@@ -5,9 +5,9 @@ This Flutter plugin a carousel listview widget with snap scrolling and onChange 
 
 ## Platform Support
 
-| Android |  iOS  | MacOS |  Web  | Linux | Windows |
-| :-----: | :---: | :---: | :---: | :---: | :-----: |
-|✅|✅|✅|✅|✅|✅|
+| Android | iOS | MacOS | Web  | Linux | Windows |
+|:-------:|:---:|:-----:|:----:|:-----:|:-------:|
+|    ✅    |  ✅  |       |      |       |         |
 
 ## Usage
 
